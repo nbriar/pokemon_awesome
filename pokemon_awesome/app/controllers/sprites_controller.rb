@@ -2,7 +2,7 @@ class SpritesController < ApplicationController
 require 'json'
   def index
    #cache the data in the database
-    for i in 1..30
+    for i in 40..70
       
       if !Sprite.exists? id:i
        temp = Pokegem.get "sprite", i
