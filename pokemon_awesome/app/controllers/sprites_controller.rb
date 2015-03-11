@@ -41,11 +41,11 @@ require 'json'
     @sprite = Sprite.find(params[:id])
   end
   
-  def clear_all
-    Sprite.all.each do |item|
-      item.delete
-    end
-    render plain: 'All Sprites Deleted'
-  end
+  # def clear_all
+    # Sprite.all.each do |item|
+      # item.delete
+    # end
+    # render plain: 'All Sprites Deleted'
+  # end
 
 end
