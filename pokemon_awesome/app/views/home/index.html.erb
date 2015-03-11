@@ -1,5 +1,14 @@
-<h1>Pokemone Awesome</h1>
-
-<%@sprites.each do |sprite|%>
-	<img src="<%=sprite.image %>">
-<% end %>
+<div class="container-fluid" ng-app="pokemon">
+  <div class="panel panel-success">
+    <div class="panel-heading">
+      <h1 ng-if="name">Hello, {{name}}</h1>
+    </div>
+    <div class="panel-body">
+      <form class="form-inline">
+        <div class="form-group">
+          <input class="form-control" type="text" placeholder="Enter your name" autofocus ng-model="name">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

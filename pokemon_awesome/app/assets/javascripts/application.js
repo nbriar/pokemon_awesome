@@ -12,5 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require angular/angular
+//= require angular-ui/build/angular-ui
+//= require angular-route/angular-route
+//= require angular-rails-templates
+//= require angular-resource/angular-resource
+//= require angular-flash/dist/angular-flash
+//= require angular-ui-tree/dist/angular-ui-tree
+//= require angular-bootstrap/ui-bootstrap-tpls
+//= require angular-animate/angular-animate 
+//= require ng-sortable
+//= require angular-dialog-service/dist/dialogs.min
+//= require angular-sanitize/angular-sanitize
+
 //= require_tree .
