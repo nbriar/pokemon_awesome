@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :sprites, only: [:index, :show]
   resources :pokemons, only: [:show]
-
+  get 'sprites/clear_all/true' => 'sprites#clear_all'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

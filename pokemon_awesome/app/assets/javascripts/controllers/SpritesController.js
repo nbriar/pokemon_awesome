@@ -47,7 +47,7 @@ controllers.controller("SpritesController", [
 		          scope: $scope,
 		          resolve: {
 			            items: function () {
-			            	return sprite.id;
+			            	return sprite;
 			            }	
 		          },
 		          backdrop: true,

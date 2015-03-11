@@ -1,5 +1,6 @@
 json.(sprite, 
-	:id, 
+	:id,
+	:national_id, 
 	:name,
 	:image,
 	)

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311035001) do
+ActiveRecord::Schema.define(version: 20150311114930) do
 
   create_table "sprites", force: true do |t|
     t.string   "image"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "national_id"
   end
 
 end

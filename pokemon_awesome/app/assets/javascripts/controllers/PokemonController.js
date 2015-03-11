@@ -5,7 +5,9 @@ controllers = angular.module('controllers');
 controllers.controller("PokemonController", [
   '$scope', '$routeParams', '$resource', '$location', 'flash', '$modalInstance','items', 'dialogs', 
   function($scope, $routeParams, $resource, $location, flash, $modalInstance, items, $dialogs) {
-    var Pokemon;
+
+	$scope.waiting = true;  
+	var Pokemon;
     Pokemon = $resource('/pokemons/:pokemonId', {
       pokemonId: "@id",
       format: 'json'
@@ -20,7 +22,8 @@ controllers.controller("PokemonController", [
 
     $scope.items = items;
     if(items){
-        $scope.pokemonId=items;
+        $scope.pokemonId=items.national_id;
+        $scope.sprite = items;
     }
  
     
@@ -28,16 +31,14 @@ controllers.controller("PokemonController", [
     	Pokemon.get({
     		pokemonId: $scope.pokemonId
       }, (function(pokemon) {
-    	  Sprite.get({
-    		 spriteId: $scope.pokemonId 
-    	  }, (function(sprite){return $scope.sprite = sprite;}));
-    	  
+      	  $scope.waiting = false;
         return $scope.pokemon = pokemon;
       }), (function(httpResponse) {
         $scope.pokemon = null;
         return flash.error = "There is no pokemon with ID " + $routeParams.pokemonId;
       }));
     } else {
+  	  $scope.waiting = false;
       $scope.pokemon = {};
     }
     

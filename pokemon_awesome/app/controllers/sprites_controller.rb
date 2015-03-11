@@ -10,7 +10,8 @@ require 'json'
           temp = JSON.parse(temp);
           sprite = Sprite.new
           sprite.id = i
-          sprite.name = temp["name"]
+          sprite.name = temp["name"].split('_').first
+          sprite.national_id = temp['pokemon']['resource_uri'].split('/').last.to_i
           sprite.image = 'http://pokeapi.co'+temp["image"]
           sprite.save
         end
@@ -38,6 +39,13 @@ require 'json'
    
   def show
     @sprite = Sprite.find(params[:id])
+  end
+  
+  def clear_all
+    Sprite.all.each do |item|
+      item.delete
+    end
+    render plain: 'All Sprites Deleted'
   end
 
 end

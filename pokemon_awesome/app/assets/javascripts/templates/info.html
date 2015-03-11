@@ -1,8 +1,10 @@
 <div style='width:90%;margin-left:auto;margin-right:auto;padding:20px;'>
-<h3>{{pokemon.name}}</h3>
+<h3>{{sprite.name}}</h3>
 	<div class='row'>
 		<div><img src="{{sprite.image}}"></div>
 	</div>
+<div ng-if='waiting'>Loading...</div>
+<div ng-if='!waiting'>
 <h4>Abilities</h4>
 	<div ng-repeat='ability in pokemon.abilities' class='col-sm-3'>
 		{{ability.name}}
@@ -15,4 +17,5 @@
 		</div>
 	</div>
 
+</div>
 </div>
