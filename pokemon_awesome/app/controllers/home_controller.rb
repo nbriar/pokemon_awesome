@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
 require 'json'
 
+  def start
+    
+  end
   def index
     @sprites = Array.new
     for i in 1..30
