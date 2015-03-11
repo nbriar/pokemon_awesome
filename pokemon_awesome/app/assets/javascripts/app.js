@@ -26,7 +26,7 @@ pokemon.config([
 
     return $routeProvider.when('/', {
       templateUrl: "index.html",
-      controller: 'HomeController'
+      controller: 'SpritesController'
     });
 
   }

@@ -1,0 +1,18 @@
+<div style='width:90%;margin-left:auto;margin-right:auto;padding:20px;'>
+<h3>{{pokemon.name}}</h3>
+	<div class='row'>
+		<div><img src="{{sprite.image}}"></div>
+	</div>
+<h4>Abilities</h4>
+	<div ng-repeat='ability in pokemon.abilities' class='col-sm-3'>
+		{{ability.name}}
+	</div>
+	<div>Defense: {{pokemon.defense}} </div>
+	<h4>Moves</h4>
+	<div class='row'>
+		<div ng-repeat='move in pokemon.moves' class='col-sm-3'>
+			{{move.name}}
+		</div>
+	</div>
+
+</div>
