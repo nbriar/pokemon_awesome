@@ -30,7 +30,7 @@ require 'json'
     
     if params[:keywords]
         
-        @sprites = Sprite.where("name LIKE ?", "%#{params[:keywords]}%")
+        @sprites = Sprite.where("UPPER(name) LIKE ?", "%#{params[:keywords].upcase}%")
     else
         @sprites = Sprite.all
     end
