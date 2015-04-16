@@ -8,6 +8,4 @@ require 'json'
       raise 'error'
     end
   end
-
-
 end
